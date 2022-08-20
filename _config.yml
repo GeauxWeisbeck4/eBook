@@ -1,0 +1,74 @@
+# ----
+# Site
+
+title: Alice's Adventures In Wonderland
+url: "https://adored-walnut.cloudvent.net/"
+baseurl:
+google_analytics_key:
+logo: /siteicon.png
+description: Book template for Jekyll.
+author:
+  name: Lewis Carroll
+  email:
+  twitter: # twitter username without the @ symbol
+social:
+  name: Author Template
+  links:
+    - https://github.com/CloudCannon/author-jekyll-template
+
+# -----
+# Build
+
+timezone: Etc/UTC
+
+exclude:
+  - README.md
+  - LICENCE
+
+permalink: pretty
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+  - scope:
+      path: "_chapters/1-down-the-rabbit-hole.md"
+    values:
+      permalink: "/"
+      layout: "chapter"
+  - scope:
+      path: "full.html"
+    values:
+      layout: "chapters"
+      toc: "hash"
+  - scope:
+      type: "chapters"
+    values:
+      layout: "chapter"
+
+collections:
+  chapters:
+    output: true
+  extras:
+
+# -----------
+# CloudCannon
+
+_options:
+  content:
+    format: "h3 h4 h5 h6 p"
+    bold: true
+    italic: true
+    removeformat: true
+    link: true
+    blockquote: true
+    numberedlist: true
+    bulletedlist: true
+    image: true
+    underline: true
+    table: true
+
+_comments:
+  cover_image: Used as the background of the book cover.
+  table_of_contents: Shows/hides the tables of contents.
